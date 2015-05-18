@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.moviles.b2c.Registrate"
+    android:id="@+id/mainRegistro"
+    >
+
+
+    <fragment
+        android:name="com.moviles.b2c.fragments.PersonaFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id ="@+id/fper"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <fragment
+        android:name="com.moviles.b2c.fragments.EmpresaFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id ="@+id/femp"
+        android:layout_marginTop="30dp"
+
+        />
+
+</RelativeLayout>

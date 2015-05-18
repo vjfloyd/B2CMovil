@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+
+    <color name="primary_dark">#ff1b1016</color>
+    <color name="primary">#ff499a8c</color>
+    <color name="accent">#ff1b1016</color>
+    <color name="tabp">#ffff4559</color>
+    <color name="tabe">#ff1459ff</color>
+
+
+
+</resources>

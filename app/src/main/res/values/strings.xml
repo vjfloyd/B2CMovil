@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">B2C</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_conectate">Conectate</string>
+    <string name="title_activity_registrate">Registrate</string>
+    <string name="appNombre">B2C</string>
+    <string name="opcion1">Conéctate</string>
+    <string name="opcion2">Registrate</string>
+    <string name="title_activity_favoritos">Favoritos</string>
+</resources>
