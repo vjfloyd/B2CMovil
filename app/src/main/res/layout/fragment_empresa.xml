@@ -3,13 +3,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.moviles.b2c.fragments.EmpresaFragment"
-    android:background="@color/tabe"
+
     >
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:text="Razon Social"
+            android:hint="Razon Social"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="35dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:text="Email"
+            android:hint="Email"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:text="RUC"
+            android:hint="RUC"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:text="Direccion"
+            android:hint="Direccion"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:text="Pagina Web"
+            android:hint="Pagine Web"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:text="Usuario"
+            android:hint="Usuario"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="70dp"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:text="Contrasena"
+            android:hint="Contrasena"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:text="Registrarse"
+            android:background="@color/primary"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"/>
+
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

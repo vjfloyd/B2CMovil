@@ -140,7 +140,7 @@ public class FavoritosFragment extends Fragment {
 
     public ArrayList<Favorito> parser (JSONArray response){
 
-        ArrayList<Favorito> songsAux = new ArrayList<Favorito>();
+        ArrayList<Favorito> favoritoAux = new ArrayList<Favorito>();
 
         for(int i = 0; i<response.length(); i++){
 
@@ -156,7 +156,7 @@ public class FavoritosFragment extends Fragment {
 
                 //Log.e("dato",favorito.getSongName().toString());
 
-                songsAux.add(favorito);
+                favoritoAux.add(favorito);
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -166,6 +166,6 @@ public class FavoritosFragment extends Fragment {
         }
 
 
-        return songsAux;
+        return favoritoAux;
     }
 }
