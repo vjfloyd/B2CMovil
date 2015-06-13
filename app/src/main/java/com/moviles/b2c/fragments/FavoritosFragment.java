@@ -53,10 +53,10 @@ public class FavoritosFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        //Un fragmento no tiene el contexto , como si lo tiene un Activity
-        String URL = "mi url";
+        //Un fragmento no tiene un contexto , como si lo tiene un Activity
+        String URL = "https://script.google.com/macros/s/AKfycbwTbXryiP8K_8z8QdGNBeos8yGuvFPtaANwNCJUPI4b4QBTYg/exec";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
-
+        //Intefaz de la peticion, context+ getActivity() : todos los widget reciben un contexto
         final ProgressDialog progressDialog = ProgressDialog.show(getActivity(), "Espere ...", "Cargando datos...");
 
         JsonArrayRequest req = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
@@ -64,6 +64,9 @@ public class FavoritosFragment extends Fragment {
             @Override
             public void onResponse(JSONArray response) {
                 Log.e("mirespuesta", response.toString());
+                dataset = new ArrayList<Favorito>();
+                dataset= parser(response);
+
                 progressDialog.cancel();
             }
         }, new Response.ErrorListener() {
@@ -120,14 +123,6 @@ public class FavoritosFragment extends Fragment {
         favoritosArray.add(favorito);
 
 
-        /*
-        * holder.textViewLarge.setText( favorito.getIdinmueble().getDistrito() );
-          holder.textViewMedium.setText( favorito.getIdinmueble().getDescripcion());
-          holder.textViewSmall.setText( favorito.getIdinmueble().getDireccion());
-        *
-        * */
-
-
 
 
         RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.mi_recycler_view);
@@ -149,12 +144,14 @@ public class FavoritosFragment extends Fragment {
             try {
 
                 JSONObject jsonObject = (JSONObject) response.get(i);
+                Inmueble objinm = new Inmueble();
+                objinm.setDistrito(jsonObject.getString("distrito"));
+                objinm.setDescripcion(jsonObject.getString("descripcion"));
+                objinm.setDireccion(jsonObject.getString("direccion"));
+                favorito.setIdInmueble(objinm);
 
-                //favorito.setSongName(jsonObject.getString("cancion"));
-                //favorito.setSongArtist(jsonObject.getString("artista"));
-                //favorito.setStars(jsonObject.getInt("estrellas"));
 
-                //Log.e("dato",favorito.getSongName().toString());
+                Log.e("dato",favorito.getIdInmueble().getDistrito());
 
                 favoritoAux.add(favorito);
 
