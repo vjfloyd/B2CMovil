@@ -1,4 +1,4 @@
-package com.moviles.b2c.models;
+package com.moviles.b2c.entity;
 
 /**
  * Created by vjrojasb on 5/17/15.

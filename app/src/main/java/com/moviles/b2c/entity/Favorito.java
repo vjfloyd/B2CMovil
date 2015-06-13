@@ -1,4 +1,4 @@
-package com.moviles.b2c.models;
+package com.moviles.b2c.entity;
 
 import java.util.Date;
 
