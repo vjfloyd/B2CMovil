@@ -15,7 +15,7 @@ import org.json.JSONArray;
 /**
  * Created by vjrojasb on 6/20/15.
  */
-public class B2CListener {
+public class B2cListener {
 
 
     private  void getService( String URL, Context context){

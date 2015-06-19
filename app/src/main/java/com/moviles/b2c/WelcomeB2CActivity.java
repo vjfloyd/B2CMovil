@@ -7,8 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.moviles.b2c.models.Inmueble;
-
 
 public class WelcomeB2CActivity extends Activity {
 

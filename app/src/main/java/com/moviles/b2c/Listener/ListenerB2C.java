@@ -29,15 +29,14 @@ public  class ListenerB2C  implements   EntityParser{
         JsonArrayRequest consulta = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                CustomAdapter adapter = new CustomAdapter(  context , listar(response));
+                //CustomAdapter adapter = new CustomAdapter(  context , listar(response));
 
             }
 
-<<<<<<< HEAD
-             //adapter = new CustomAdapter( getApplication(), parser(response));
-=======
 
->>>>>>> 3f4b12176ef72f289cca83842aa1213dc23b9189
+             //adapter = new CustomAdapter( getApplication(), parser(response));
+
+
 
         }, new Response.ErrorListener() {
             @Override
@@ -52,13 +51,6 @@ public  class ListenerB2C  implements   EntityParser{
 
 
     }
-<<<<<<< HEAD
-/*
-    public ArrayList<E> parsearInfo (){
-
-    }
-*/
-=======
 
 
     @Override
@@ -80,7 +72,6 @@ public  class ListenerB2C  implements   EntityParser{
     public Object obtener() {
         return null;
     }
->>>>>>> 3f4b12176ef72f289cca83842aa1213dc23b9189
 
     @Override
     public ArrayAdapter listar(JSONArray respuesta) {

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -19,6 +20,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.moviles.b2c.R;
 import com.moviles.b2c.adapters.FavoritosAdapter;
+import com.moviles.b2c.conexion.ConexionB2C;
 import com.moviles.b2c.entity.Favorito;
 import com.moviles.b2c.entity.Inmueble;
 
@@ -57,9 +59,14 @@ public class FavoritosFragment extends Fragment {
         //String URL = "http://192.168.1.5:8080/B2CWS/inmueble/1";
 
 
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        //RequestQueue queue = Volley.newRequestQueue(getActivity());
         //Intefaz de la peticion, context+ getActivity() : todos los widget reciben un contexto
+
+        RequestQueue queue = ConexionB2C.getInstance(getActivity().getApplicationContext()).getRequestQueue();
+
+
         final ProgressDialog progressDialog = ProgressDialog.show(getActivity(), "Espere ...", "Cargando datos...");
+
 
         JsonArrayRequest req = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
 
@@ -76,6 +83,7 @@ public class FavoritosFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 progressDialog.cancel();
 
+                Toast.makeText(getActivity().getApplicationContext(), "No se pudo establecer Conexón", Toast.LENGTH_SHORT);
             }
         });
 
@@ -148,7 +156,9 @@ public class FavoritosFragment extends Fragment {
                 objinm.setDistrito(jsonObject.getString("distrito"));
                 objinm.setDescripcion(jsonObject.getString("descripcion"));
                 objinm.setDireccion(jsonObject.getString("direccion"));
+                objinm.setPrecio(Double.parseDouble(jsonObject.getString("precio")));
                 favorito.setIdInmueble(objinm);
+
 
 
                 Log.e("dato",favorito.getIdInmueble().getDistrito());

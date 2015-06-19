@@ -8,18 +8,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.moviles.b2c.Listener.ApplicationController;
 //import com.moviles.b2c.Listener.CustomRequest;
+import com.moviles.b2c.Listener.CustomRequest;
 import com.moviles.b2c.adapters.InmueblesAdapter;
-import com.moviles.b2c.models.Favorito;
-import com.moviles.b2c.models.Inmueble;
+import com.moviles.b2c.entity.Favorito;
+import com.moviles.b2c.entity.Inmueble;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +31,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 
 public class InmueblesActivity extends Activity {
@@ -39,13 +44,14 @@ public class InmueblesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inmuebles);
 
-        /*
+
+ /*--------------------------------------- Enviar JsonArray-------------------------------------------*/
 
             RequestQueue queue = Volley.newRequestQueue(this);
-            String URL = "http://10.11.129.56:8080/B2CWS/favoritos/1";
+            String URL = "http://10.11.80.19:8080/B2CWS/favoritos/1";
           //String URL = "https://script.google.com/macros/s/AKfycbwTbXryiP8K_8z8QdGNBeos8yGuvFPtaANwNCJUPI4b4QBTYg/exec";
 
-            final ProgressDialog progressDialog = ProgressDialog.show(this, "Please wait ...", "Downloading Data ...", true);
+            final ProgressDialog progressDialog = ProgressDialog.show(this, "Esperar  ...", "Descargando Datos ...", true);
 
             JsonArrayRequest request = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
                 @Override
@@ -54,11 +60,11 @@ public class InmueblesActivity extends Activity {
 
 
                     ListView list = (ListView) findViewById(R.id.list_view);
-                    InmueblesAdapter inmueblesAdapter = new InmueblesAdapter(getApplicationContext(), parser(response));
+                    InmueblesAdapter inmueblesAdapter = new InmueblesAdapter(getApplicationContext(), parserJSONArray(response));
 
                     list.setAdapter(inmueblesAdapter);
 
-                    progressDialog.dismiss();
+                   progressDialog.dismiss();
                 }
 
             }, new  Response.ErrorListener() {
@@ -71,80 +77,40 @@ public class InmueblesActivity extends Activity {
             }
         });
 
-
-
         queue.add(request);
-      */
 
 
 
-        String URL = "http://10.11.129.56:8080/B2CWS/inmueble/1";
-        // Post params to be sent to the server
+ /*--------------------------------------- Enviar JsonObject -------------------------------------------*/
+
+      //  String jsonUrl = "http://localhost:8080/B2CWS/inmuebles";
+
         HashMap<String, String> params = new HashMap<String, String>();
-        params.put("token", "AbCdEfGh123456");
-
-        JsonObjectRequest req = new JsonObjectRequest(URL, new JSONObject(params),
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        /*
-                        try {
-                            VolleyLog.v("Response:%n %s", response.toString(4));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                        */
-                        Log.e("Respuesta", response.toString());
+        params.put("titulo", "xxx");
+        params.put("distrito","");
+        params.put("titulo", "xxx");
+        params.put("descripcion","xx");
+        params.put("precio", "xxx");
+        params.put("titulo","");
 
 
-                        ListView list = (ListView) findViewById(R.id.list_view);
-                        InmueblesAdapter inmueblesAdapter = new InmueblesAdapter(getApplicationContext(), parserJSONObject(response));
-
-                        list.setAdapter(inmueblesAdapter);
-
-                        //progressDialog.dismiss();
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                VolleyLog.e("Error: ", error.getMessage());
-            }
-        });
+        /**
+         *
+         *  private  int idInmueble;
+         private  String titulo;
+         private String titulo;
+         private  String distrito;
+         private int latitud;
+         private int longitud;
+         private String descripcion;
+         private double precio;
+         *
+         */
 
 
-
-        // add the request object to the queue to be executed
-        ApplicationController.getInstance().addToRequestQueue(req);
+       // AppController.getInstance().addToRequestQueue(jsObjRequest, tag_json_obj);
 
 
-    }
-
-    public ArrayList<Inmueble> parserJSONObject(JSONObject respuesta){
-        ArrayList<Inmueble> inmueblesLista = new ArrayList<Inmueble>();
-        ArrayList<Favorito> favoritosLista = new ArrayList<Favorito>();
-
-
-        for ( int i = 0 ; i < respuesta.length() ; i++ ){
-            JSONObject jsonObject;
-            Inmueble inmueble = new Inmueble();
-            Favorito favorito = new Favorito();
-             try {
-                 jsonObject = (JSONObject) respuesta.get(String.valueOf(i));
-                 inmueble.setDistrito(jsonObject.getString("titulo"));
-                 inmueble.setDireccion(jsonObject.getString("direccion"));
-                 inmueble.setDescripcion(jsonObject.getString("descripcion"));
-                 inmueblesLista.add(inmueble);
-
-             }catch (JSONException e){
-                Log.e("peticion", "Error al parsear");
-
-             }
-        }
-
-
-        return  inmueblesLista;
     }
 
 
@@ -154,27 +120,28 @@ public class InmueblesActivity extends Activity {
 
         for( int i=0; i < respuesta.length(); i++){
             JSONObject jsonObject;
+            //Inmueble inmueble = new Inmueble();
             Inmueble inmueble = new Inmueble();
             Favorito favorito = new Favorito();
             try {
-
+                    /*
                  jsonObject = (JSONObject) respuesta.get(i);
                  inmueble.setDistrito(jsonObject.getString("distrito"));
                  inmueble.setDireccion(jsonObject.getString("direccion"));
                  inmueble.setDescripcion(jsonObject.getString("descripcion"));
                  inmueblesLista.add(inmueble);
 
+                    */
 
-
-                /*   EXTRAER DEL SERVIDOR
+                // EXTRAER DEL SERVIDOR
 
                 jsonObject = (JSONObject) respuesta.get(i);
-                favorito.setIdfavoritos( Integer.parseInt( jsonObject.getString("id")) );
-                inmueble.setDistrito(jsonObject.getString("titulo"));
+                favorito.setIdfavoritos(Integer.parseInt(jsonObject.getString("id")));
+                inmueble.setTitulo(jsonObject.getString("titulo"));
                 inmueble.setDireccion(jsonObject.getString("direccion"));
-                inmueble.setDescripcion(jsonObject.getString("descripcion"));
+                //inmueble.setPrecio(Double.parseDouble(jsonObject.getString("precio")));
+                //inmueble.setDescripcion(jsonObject.getString("descripcion"));
 
-                */
                 inmueblesLista.add(inmueble);
 
 

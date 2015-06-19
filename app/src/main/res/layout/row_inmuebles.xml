@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:background="#90000000"
     >
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Nombre"
+        android:text="Habitación"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
-        android:id="@+id/nombre" />
+        android:id="@+id/titulo" />
 
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Distrito"
@@ -31,7 +32,7 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Direccion"
         android:textStyle="italic"
@@ -40,7 +41,7 @@
         android:id="@+id/direccion" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Descripcion"
         android:textStyle="italic"
@@ -49,5 +50,6 @@
         android:layout_gravity="right"
         android:textColor="#00de72"
         android:id="@+id/descripcion" />
+
 
 </LinearLayout>

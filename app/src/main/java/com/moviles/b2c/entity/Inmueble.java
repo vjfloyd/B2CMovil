@@ -14,7 +14,7 @@ public class Inmueble {
     private int latitud;
     private int longitud;
     private String descripcion;
-    private int precio;
+    private double precio;
     private int cantFavoritos;
     private Date fechaCreacion;
     private boolean eliminado;
@@ -78,11 +78,11 @@ public class Inmueble {
         this.descripcion = descripcion;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
