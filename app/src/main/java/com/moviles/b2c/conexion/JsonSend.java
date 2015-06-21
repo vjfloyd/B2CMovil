@@ -25,7 +25,7 @@ public class JsonSend {
 
         RequestQueue queue = ConexionB2C.getInstance(context).getRequestQueue();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://localhost:8080/B2CWS//user/create", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://localhost:8080/B2CWS/user/create", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
