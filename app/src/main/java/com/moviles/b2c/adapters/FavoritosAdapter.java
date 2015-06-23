@@ -20,8 +20,6 @@ import java.util.ArrayList;
  */
 public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.ViewHolder> {
 
-
-
     private ArrayList<Favorito> favoritos;
     private int itemLayout;
 

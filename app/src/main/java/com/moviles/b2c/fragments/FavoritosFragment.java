@@ -136,10 +136,8 @@ public class FavoritosFragment extends Fragment {
     public ArrayList<Favorito> parser (JSONArray response){
 
         ArrayList<Favorito> favoritoAux = new ArrayList<Favorito>();
-
         for(int i = 0; i<response.length(); i++){
-
-            Favorito favorito = new Favorito();
+             Favorito favorito = new Favorito();
 
             try {
 
@@ -161,7 +159,6 @@ public class FavoritosFragment extends Fragment {
 
 
         }
-
 
         return favoritoAux;
     }
