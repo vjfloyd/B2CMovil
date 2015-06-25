@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.moviles.b2c.Registrate"
-    android:id="@+id/mainRegistro"
+    tools:context="com.moviles.b2c.RegistrateActivity"
+    android:id="@+id/mainRegistrate"
     >
 
 

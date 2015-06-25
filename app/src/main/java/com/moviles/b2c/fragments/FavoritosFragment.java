@@ -54,7 +54,11 @@ public class FavoritosFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         //Un fragmento no tiene un contexto , como si lo tiene un Activity
+        //
         String URL = "https://script.google.com/macros/s/AKfycbwTbXryiP8K_8z8QdGNBeos8yGuvFPtaANwNCJUPI4b4QBTYg/exec";
+        //String URL = "http://192.168.1.5:8080/B2CWS/inmueble/1";
+
+
         RequestQueue queue = Volley.newRequestQueue(getActivity());
         //Intefaz de la peticion, context+ getActivity() : todos los widget reciben un contexto
         final ProgressDialog progressDialog = ProgressDialog.show(getActivity(), "Espere ...", "Cargando datos...");

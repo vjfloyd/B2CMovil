@@ -33,7 +33,7 @@ public class ListenerB2C  {
                 Log.e("rpta", response.toString());
             }
 
-             adapter = new CustomAdapter( getApplication(), parser(response));
+             //adapter = new CustomAdapter( getApplication(), parser(response));
 
         }, new Response.ErrorListener() {
             @Override
@@ -48,10 +48,10 @@ public class ListenerB2C  {
 
 
     }
-
+/*
     public ArrayList<E> parsearInfo (){
 
     }
-
+*/
 
 }

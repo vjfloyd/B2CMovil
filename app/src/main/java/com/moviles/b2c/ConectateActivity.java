@@ -1,35 +1,23 @@
 package com.moviles.b2c;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class Favoritos extends Activity {
-
+public class ConectateActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favoritos);
-
-        ActionBar  actionBar = getActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-
+        setContentView(R.layout.activity_conectate);
     }
-
-    //TENGO QUE SETEAR EL FRAGMENTE A ESTE ACTIVITY FAVORITOS
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_favoritos, menu);
+        getMenuInflater().inflate(R.menu.menu_conectate, menu);
         return true;
     }
 

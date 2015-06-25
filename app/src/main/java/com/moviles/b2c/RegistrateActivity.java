@@ -14,7 +14,7 @@ import com.moviles.b2c.fragments.EmpresaFragment;
 import com.moviles.b2c.fragments.PersonaFragment;
 
 
-public class Registrate extends Activity implements ActionBar.TabListener{
+public class RegistrateActivity extends Activity implements ActionBar.TabListener{
 
 
     private Fragment[] fragments = new Fragment[]{
@@ -31,9 +31,9 @@ public class Registrate extends Activity implements ActionBar.TabListener{
 
         FragmentManager manager = getFragmentManager();
         FragmentTransaction fragmentTransaction = manager.beginTransaction();
-
+        //Agregar cada fragment a la vista
         for (Fragment fragment : fragments){
-            fragmentTransaction.add(R.id.mainRegistro, fragment).hide(fragment);
+            fragmentTransaction.add(R.id.mainRegistrate, fragment).hide(fragment);
         }
 
         fragmentTransaction.show( fragments[0]).commit();
@@ -43,10 +43,8 @@ public class Registrate extends Activity implements ActionBar.TabListener{
     private void setTabs(){
         ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
         actionBar.addTab(actionBar.newTab().setText("PERSONA").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText("EMPRESA").setTabListener(this));
-
 
     }
 

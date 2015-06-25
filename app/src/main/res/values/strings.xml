@@ -12,4 +12,5 @@
     <string name="opcion1">Conéctate</string>
     <string name="opcion2">Registrate</string>
     <string name="title_activity_favoritos">Favoritos</string>
+    <string name="title_activity_inmuebles">InmueblesActivity</string>
 </resources>

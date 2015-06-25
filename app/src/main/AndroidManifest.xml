@@ -10,10 +10,11 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
-    <permission android:protectionLevel="signature"
-        android:name="com.moviles.b2c.permission.C2D_MESSAGE" />
-    <uses-permission android:name="com.moviles.b2c.permission.C2D_MESSAGE" />
+    <permission
+        android:name="com.moviles.b2c.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
 
+    <uses-permission android:name="com.moviles.b2c.permission.C2D_MESSAGE" />
 
     <application
         android:allowBackup="true"
@@ -21,7 +22,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".WelcomeB2C"
+            android:name=".WelcomeB2CActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,28 +31,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Conectate"
+            android:name=".ConectateActivity"
             android:label="@string/title_activity_conectate"
-            android:parentActivityName=".WelcomeB2C" >
+            android:parentActivityName=".WelcomeB2CActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moviles.b2c.WelcomeB2C" />
+                android:value=".WelcomeB2CActivity" />
         </activity>
         <activity
-            android:name=".Registrate"
+            android:name=".RegistrateActivity"
             android:label="@string/title_activity_registrate"
-            android:parentActivityName=".WelcomeB2C" >
+            android:parentActivityName=".WelcomeB2CActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moviles.b2c.WelcomeB2C" />
+                android:value=".WelcomeB2CActivity" />
         </activity>
         <activity
-            android:name=".Favoritos"
+            android:name=".FavoritosActivity"
             android:label="@string/title_activity_favoritos"
-            android:parentActivityName=".WelcomeB2C" >
+            android:parentActivityName=".WelcomeB2CActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moviles.b2c.WelcomeB2C" />
+                android:value=".WelcomeB2CActivity" />
+        </activity>
+        <activity
+            android:name=".InmueblesActivity"
+            android:label="@string/title_activity_inmuebles"
+            android:parentActivityName=".WelcomeB2CActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moviles.b2c.WelcomeB2CActivity" />
         </activity>
     </application>
 

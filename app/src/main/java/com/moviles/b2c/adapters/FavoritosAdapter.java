@@ -1,14 +1,10 @@
 package com.moviles.b2c.adapters;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.moviles.b2c.fragments.FavoritosFragment;
-import com.moviles.b2c.Favoritos;
 
 import com.moviles.b2c.R;
 import com.moviles.b2c.models.Favorito;
