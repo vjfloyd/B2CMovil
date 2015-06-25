@@ -1,7 +1,6 @@
 package com.moviles.b2c.fragments;
 
 
-import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -20,15 +19,14 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.moviles.b2c.R;
 import com.moviles.b2c.adapters.FavoritosAdapter;
-import com.moviles.b2c.models.Favorito;
-import com.moviles.b2c.models.Inmueble;
+import com.moviles.b2c.entity.Favorito;
+import com.moviles.b2c.entity.Inmueble;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.

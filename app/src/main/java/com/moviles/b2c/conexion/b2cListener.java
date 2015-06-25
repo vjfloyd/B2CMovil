@@ -15,7 +15,7 @@ import org.json.JSONArray;
 /**
  * Created by vjrojasb on 6/20/15.
  */
-public class b2cListener {
+public class B2CListener {
 
 
     private  void getService( String URL, Context context){
@@ -26,7 +26,6 @@ public class b2cListener {
         JsonArrayRequest consulta = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-
 
 
             }

@@ -1,19 +1,20 @@
-package com.moviles.b2c.models;
+package com.moviles.b2c.entity;
 
 /**
  * Created by vjrojasb on 5/17/15.
  */
-public class TipoUsuario {
+public class TipoInmueble {
 
-    private int idTipoUsuario;
+    private int idTipoInmueble;
     private String descripcion;
 
-    public int getIdTipoUsuario() {
-        return idTipoUsuario;
+
+    public int getIdTipoInmueble() {
+        return idTipoInmueble;
     }
 
-    public void setIdTipoUsuario(int idTipoUsuario) {
-        this.idTipoUsuario = idTipoUsuario;
+    public void setIdTipoInmueble(int idTipoInmueble) {
+        this.idTipoInmueble = idTipoInmueble;
     }
 
     public String getDescripcion() {

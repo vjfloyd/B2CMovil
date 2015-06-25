@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.moviles.b2c.R;
-import com.moviles.b2c.models.Favorito;
+import com.moviles.b2c.entity.Favorito;
 
 import java.util.ArrayList;
 
